@@ -25,12 +25,14 @@ models:
         description: "{{ doc('order_status') }}"
         tests:
           - accepted_values:
-              values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
+              arguments: 
+                values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
       - name: customer_id
         description: Foreign key to stg_customers.customer_id.
         tests:
           - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
       - name: order_date
         description: The date when the order was placed (YYYY-MM-DD).
