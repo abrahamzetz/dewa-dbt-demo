@@ -21,3 +21,6 @@ final as (
 
 select * from final
 
+-- demonstrate test error
+--union all
+--select null, 'Muhammad', 'A.', null, null, 0
