@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: customers_orders
+    description: mart layer of first and last order date of a customer with their number of orders
+    columns:
+      - name: customer_id
+        description: The primary key for customers.
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: The first name of the customer
+      - name: last_name
+        description: The last name of the customer

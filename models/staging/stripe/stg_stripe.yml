@@ -13,14 +13,16 @@ models:
         description: Foreign key to stg_orders.order_id.
         tests:
           - relationships:
-              to: ref('stg_orders')
-              field: order_id
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
       - name: status
         description: "{{ doc('payment_status') }}"
         tests:
           - accepted_values:
-              values:
-                - 'success'
-                - 'fail'
+              arguments:
+                values:
+                  - 'success'
+                  - 'fail'
       - name: amount
         description: the amount of money paid by the customer (in cents).
