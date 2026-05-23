@@ -6,4 +6,4 @@
 }}
 
 select *
-from source('fingrid', 'consumption')
+from {{ source('fingrid', 'consumption') }}
