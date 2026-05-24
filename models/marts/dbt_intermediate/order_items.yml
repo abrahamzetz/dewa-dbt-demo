@@ -28,8 +28,8 @@ models:
               arguments:
                 min_value: 1
                 max_value: 1000
-      - name: unit_price
-        description: Price per unit of the product.
+      - name: unit_price_usd
+        description: Price per unit of the product in USD.
         tests:
           - not_null
           - value_in_range:
@@ -37,7 +37,7 @@ models:
                 min_value: 0
                 max_value: 100000
       - name: line_total
-        description: quantity * unit_price for this line.
+        description: quantity * unit_price_usd for this line.
         tests:
           - not_null
           - value_in_range:
