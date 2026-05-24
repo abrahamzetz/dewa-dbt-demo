@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: fingrid
+    database: raw
+    schema: fingrid
+    tables:
+      - name: consumption
