@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: order_items
+    description: One row per product line in an order, with line totals.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - product_id
+    columns:
+      - name: order_id
+        description: Foreign key to the order.
+        tests:
+          - not_null
+      - name: product_id
+        description: Foreign key to the product.
+        tests:
+          - not_null
+      - name: product_name
+        description: Name of the product.
+      - name: quantity
+        description: Number of units of the product in this order line.
+        tests:
+          - not_null
+          - value_in_range:
+              min_value: 1
+              max_value: 1000
+      - name: unit_price
+        description: Price per unit of the product.
+        tests:
+          - not_null
+          - value_in_range:
+              min_value: 0
+              max_value: 100000
+      - name: line_total
+        description: quantity * unit_price for this line.
+        tests:
+          - not_null
+          - value_in_range:
+              min_value: 0
+              max_value: 1000000
