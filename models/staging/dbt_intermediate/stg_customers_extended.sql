@@ -5,7 +5,7 @@
 }}
 
 with seed_customers_extended as (
-    select * from {{ ref('seed_customers_extended') }}
+    select * from {{ ref('raw_customers_extended') }}
 ),
 
 final as(

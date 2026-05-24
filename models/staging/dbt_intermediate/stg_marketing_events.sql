@@ -6,7 +6,7 @@
 }}
 
 with seed_marketing_events as (
-    select * from {{ ref('seed_marketing_events') }}
+    select * from {{ ref('raw_marketing_events') }}
     where true
         and event_date <= '2026-05-16'  -- only load up to this date for demo purposes
     {% if is_incremental() %}
