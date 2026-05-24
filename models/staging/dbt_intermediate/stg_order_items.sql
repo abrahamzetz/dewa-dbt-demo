@@ -15,7 +15,7 @@ final as(
         product_id,
         product_name,
         quantity,
-        unit_price
+        unit_price_cents
     from seed_order_items
 )
 
