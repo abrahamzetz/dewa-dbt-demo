@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_customers_extended
+    description: Staging view of extended customer attributes.
+    columns:
+      - name: customer_id
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: Customer email address.
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+      - name: signup_date
+        description: Date the customer signed up.
+      - name: country_code
+        description: ISO country code.
+      - name: marketing_opt_in
+        description: Whether the customer opted in to marketing.

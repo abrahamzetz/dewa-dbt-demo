@@ -3,6 +3,11 @@ version: 2
 models:
   - name: order_items
     description: One row per product line in an order, with line totals.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - product_id
     columns:
       - name: order_id
         description: Foreign key to the order.
