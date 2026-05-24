@@ -1,6 +1,7 @@
 {{
   config(
     materialized = 'view',
+    tags = ['dbt_intermediate'],
     )
 }}
 
