@@ -1,2 +1,9 @@
 .DS_Store
 dbt_internal_packages/
+
+.venv/
+venv/
+env/
+.dbt/
+logs/
+target/
