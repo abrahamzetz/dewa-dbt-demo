@@ -9,9 +9,9 @@
 with seed_marketing_events as (
     select * from {{ ref('raw_marketing_events') }}
     where true
-        and event_date <= '2026-05-16'  -- only load up to this date for demo purposes
+        and event_timestamp <= '2026-05-16'  -- only load up to this date for demo purposes
     {% if is_incremental() %}
-        and event_date >= (select max(event_date) from {{ this }})
+        and event_timestamp >= (select max(event_timestamp) from {{ this }})
     {% endif %}
 ),
 
