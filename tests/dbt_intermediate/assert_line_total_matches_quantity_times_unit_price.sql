@@ -3,4 +3,3 @@
 select *
 from {{ ref('order_items') }}
 where line_total != quantity * unit_price_usd
-   or line_total is null
