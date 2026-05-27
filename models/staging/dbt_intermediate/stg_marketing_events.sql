@@ -22,7 +22,8 @@ final as (
        event_type,
        customer_id,
        campaign_name,
-       page_url
+       page_url,
+       current_timestamp() as loaded_at
     from seed_marketing_events
 )
 
