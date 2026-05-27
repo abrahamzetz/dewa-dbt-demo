@@ -16,6 +16,12 @@ models:
           - dbt_expectations.expect_column_values_to_match_regex:
               arguments:
                 regex: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+              config:
+                severity: error
+                store_failures: true
+                limit: 100
+                error_if: ">10"
+                warn_if: ">0"
       - name: signup_date
         description: Date the customer signed up.
       - name: country_code
