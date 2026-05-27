@@ -18,7 +18,6 @@ models:
                 regex: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
               config:
                 severity: error
-                store_failures: true
                 limit: 100
                 error_if: ">10"
                 warn_if: ">0"
