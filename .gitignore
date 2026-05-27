@@ -7,3 +7,5 @@ env/
 .dbt/
 logs/
 target/
+
+dbt_packages/
