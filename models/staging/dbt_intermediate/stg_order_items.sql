@@ -1,11 +1,12 @@
 {{
   config(
     materialized = 'view',
+    tags = ['dbt_intermediate'],
     )
 }}
 
 with seed_order_items as (
-    select * from {{ ref('seed_order_items') }}
+    select * from {{ ref('raw_order_items') }}
 ),
 
 final as(
@@ -14,7 +15,7 @@ final as(
         product_id,
         product_name,
         quantity,
-        unit_price
+        unit_price_cents
     from seed_order_items
 )
 

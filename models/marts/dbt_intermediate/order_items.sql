@@ -1,6 +1,7 @@
 {{
   config(
     materialized = 'table',
+    tags = ['dbt_intermediate'],
     )
 }}
 
@@ -14,8 +15,8 @@ final as (
         product_id,
         product_name,
         quantity,
-        unit_price,
-        quantity * unit_price as line_total
+        {{ cents_to_dollars('unit_price_cents', 2) }} as unit_price_usd,
+        quantity * {{ cents_to_dollars('unit_price_cents', 2) }} as line_total
     from raw_order_items
 )
 
