@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dq_snapshots
+    database: data_quality
+    schema: snapshots
+    tables:
+      - name: dq_customers
