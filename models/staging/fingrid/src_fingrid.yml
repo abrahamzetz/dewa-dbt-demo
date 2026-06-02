@@ -6,3 +6,12 @@ sources:
     schema: fingrid
     tables:
       - name: consumption
+        config:
+          freshness:
+            warn_after:
+              count: 1
+              period: day
+            error_after:
+              count: 100
+              period: day
+          loaded_at_field: _loaded_at
