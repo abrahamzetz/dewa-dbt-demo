@@ -1,0 +1,9 @@
+{
+    "dbt.dbtPythonPathOverride": "/Users/abrahamsetiawan/Library/Mobile Documents/com~apple~CloudDocs/Company/DEWA AB/Teaching/Hyper Island/code_private/dewa-dbt-demo/.venv/bin/python3",
+    "dbt.deferConfigPerProject": {
+        "": {
+            "deferToProduction": true,
+            "favorState": true
+        }
+    }
+}

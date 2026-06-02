@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "dbt>=1.0.0.40.17",
     "dbt-core>=1.11.11",
     "dbt-snowflake>=1.11.5",
 ]
